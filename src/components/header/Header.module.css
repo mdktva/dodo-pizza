@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+}
+
+.left {
+    display: flex;
+    justify-content: space-around;
+    width: 65%;
+    align-items: center;
+
+}
+
+.right {
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+    align-items: center;
+}
+
+.login {
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    border: none;
+    color: darkgrey;
+    padding: 10px 20px;
+    text-decoration: none;
+}
