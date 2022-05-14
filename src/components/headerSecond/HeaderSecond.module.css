@@ -18,3 +18,6 @@
     padding: 10px 20px;
     font-size: 16px;
 }
+.global a:hover{
+    color: rgb(255, 105, 0);
+}

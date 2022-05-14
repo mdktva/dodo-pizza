@@ -1,11 +1,17 @@
 import React from 'react'
 import css from './HeaderSecond.module.css'
+import Modal from '../../pages/modal/Modal'
+import { useState } from 'react';
+
+export default function HeaderSecond(props) {
+
+  const [isModal, setIsModal] = useState(false);
 
 
-export default function HeaderSecond() {
+
   return (
-    <div className={css.body}>
-      <div>
+    <div className={css.body + " container"} >
+      <div className={css.global}>
         <a href="">Пицца</a>
         <a href="">Комбо</a>
         <a href="">Закуски</a>
@@ -18,9 +24,12 @@ export default function HeaderSecond() {
         <a href="">Прямой эфир</a>
       </div>
       <div>
-        <button className={css.button}>Корзина</button>
+
+        <button className={css.button} onClick={() => setIsModal(true)}>Корзина | {props.basket.length}</button>
+
       </div>
 
+      <Modal basket={props.basket} setIsModal={setIsModal} isModal={isModal} />
 
     </div>
   )

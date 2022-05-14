@@ -1,15 +1,29 @@
 img {
     width: 200px;
 }
-/* .title{
-
-} */
 .main{
+    width: 20%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    margin-left: 30px;
+    margin-top: 30px;
 }
 .desc{
-    width: 25%;
     color: grey;
+}
+.btn{
+    /* background-color: rgb(255, 240, 230) ; */
+    background-color: palegoldenrod ;
+    color: rgb(209, 87, 0);
+    border: none;
+    border-radius: 20px;
+    padding: 15px 35px;
+}
+/* .element{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
+.btn:hover{
+    background-color: palevioletred;
 }

@@ -6,17 +6,17 @@ import Slider from "react-slick";
 import InfoOrder from '../infoOrder/InfoOrder';
 
 
-const PrevBtn = (props) => {
-    return <div onClick={props.onClick}>
-        <img src="https://cdn0.iconfinder.com/data/icons/web-seo-and-advertising-media-1/512/218_Arrow_Arrows_Back-512.png" style={{ width: "20px" }} alt="" />
-    </div>
-}
-const NextBtn = (props) => {
-    return <div onClick={props.onClick}>
-        <img src="https://pixsector.com/cache/d317f9c9/avefdb1ad8fbf8d8b72a2.png" style={{ width: "25px" }} alt="" />
+// const PrevBtn = (props) => {
+//     return <div onClick={props.onClick}>
+//         <img src="https://cdn0.iconfinder.com/data/icons/web-seo-and-advertising-media-1/512/218_Arrow_Arrows_Back-512.png" style={{ width: "20px" }} alt="" />
+//     </div>
+// }
+// const NextBtn = (props) => {
+//     return <div onClick={props.onClick}>
+//         <img src="https://pixsector.com/cache/d317f9c9/avefdb1ad8fbf8d8b72a2.png" style={{ width: "25px" }} alt="" />
 
-    </div>
-}
+//     </div>
+// }
 
 export default function Order() {
 
@@ -26,8 +26,8 @@ export default function Order() {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        prevArrow: <PrevBtn />,
-        nextArrow: <NextBtn />
+        // prevArrow: <PrevBtn />,
+        // nextArrow: <NextBtn />
     };
 
 
