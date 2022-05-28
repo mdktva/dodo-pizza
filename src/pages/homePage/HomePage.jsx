@@ -5,6 +5,7 @@ import Sliderinfo from '../../components/sliderInfo/SliderInfo';
 import { useEffect, useState } from "react";
 import InfoPizza from './../../components/infoPizza/InfoPizza';
 import Order from './../../components/order/Order';
+import Halal from './../../components/halal/Halal';
 
 export default function HomePage(props) {
 
@@ -23,7 +24,13 @@ export default function HomePage(props) {
     return (
         <div >
             <Sliderinfo />
+            <div className='container'>
+                <h2 style={{fontWeight:"600"}}>Часто заказывают</h2>
+            </div>
+
             <Order />
+            <Halal />
+
 
             <div className="container">
                 <h1>Пицца</h1>

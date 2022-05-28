@@ -1,16 +1,23 @@
-.body a{
+.body a {
     text-decoration: none;
     color: black;
     padding-left: 30px;
 }
 
-.body{
-    height: 90px;
+.body {
+    background-color: white;
+    height: 60px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+  
+    /* position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white; */
 }
-.button{
+
+.button {
     background-color: orangered;
     border-radius: 20px;
     border: none;
@@ -18,6 +25,7 @@
     padding: 10px 20px;
     font-size: 16px;
 }
-.global a:hover{
+
+.global a:hover {
     color: rgb(255, 105, 0);
 }

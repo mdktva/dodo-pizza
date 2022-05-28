@@ -17,7 +17,7 @@ img {
     color: rgb(209, 87, 0);
     border: none;
     border-radius: 20px;
-    padding: 15px 35px;
+    padding: 15px 20px;
 }
 /* .element{
     display: flex;
@@ -27,3 +27,8 @@ img {
 .btn:hover{
     background-color: palevioletred;
 }
+.priceBtn{
+    display: flex;
+    justify-content: space-around;
+}
+

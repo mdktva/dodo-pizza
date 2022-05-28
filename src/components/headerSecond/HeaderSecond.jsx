@@ -29,7 +29,7 @@ export default function HeaderSecond(props) {
 
       </div>
 
-      <Modal basket={props.basket} setIsModal={setIsModal} isModal={isModal} />
+      <Modal setBasket={props.setBasket} basket={props.basket} setIsModal={setIsModal} isModal={isModal} />
 
     </div>
   )

@@ -24,10 +24,10 @@
     transition: all 0.3s linear;
 }
 
-.active{
+/* .active{
     opacity: 1;
     visibility: visible;
-}
+} */
 
 .active > .phone{
     right: 0;

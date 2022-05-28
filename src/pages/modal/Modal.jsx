@@ -6,7 +6,7 @@ import { useState } from 'react';
 import OrderModal from './../../components/ordermodal/OrderModal';
 
 
-export default function Modal(props, basket) {
+export default function Modal(props) {
 
     const [orderModal, setOrderModal] = useState(true);
     const totalBalance = props.basket.reduce((acc, item) => acc + Number(item.price), 0)
@@ -52,6 +52,8 @@ export default function Modal(props, basket) {
                                 {
                                     props.basket.map((item, index) => <BasketCard
                                         key={item.id}
+                                        basket ={props.basket}
+                                        setBasket={props.setBasket}
                                         {...item}
                                     />)
                                 }

@@ -29,6 +29,7 @@
     background-color: red;
     color: white;
     font-size: 12px;
+    cursor: pointer;
     border-radius: 8px;
     padding: 5px 15px;
     border: none;
