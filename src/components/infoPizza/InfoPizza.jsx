@@ -1,6 +1,7 @@
 import css from './InfoPizza.module.css'
 import React from 'react';
 import Api from './../../api/Api';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 export default function InfoPizza({ 
@@ -10,10 +11,13 @@ export default function InfoPizza({
     description, 
     image, 
     id, 
-    addToBasket, 
     isAdmin, 
     ...props 
 }) {
+
+    const count = useSelector((state) => state.count)
+
+    const dispatch = useDispatch();
 
     const onDelete =() => {
         // api.delete("dodo/" + id)
@@ -24,12 +28,18 @@ export default function InfoPizza({
         })
     }
 
+    const addToBasket = () => {
+        const data = { title, price, description, image, id }
+        dispatch ({type: "SET_PIZZA_BASKET", payload: data})
+    }
+
     return (
         <div className={css.main}>
             <div className={css.element}>
                 <img src='https://dodopizza-a.akamaihd.net/static/Img/Products/420b846ea9864b0ba6421776655a1dd6_292x292.jpeg' alt="#" />
 
                 <div>
+                    <div>{count}</div>
                     <h4>{title} </h4>
                     {/* <h4>Пепперони</h4> */}
                     {/* <p className={css.desc}>{description}</p> */}
@@ -43,9 +53,7 @@ export default function InfoPizza({
                                 <button style={{backgroundColor: 'green', color: 'white', marginRight: '8px', border: 'none'}}>Change</button>
                                 <button onClick={() => onDelete(id)} style={{backgroundColor: 'red', color: 'white', border: 'none'}}>Delete </button>
                             </div>
-                            : <button className={css.btn} onClick={() => {
-                                addToBasket({ title, price, description, image, id, addToBasket })
-                            }}>
+                            : <button className={css.btn} onClick={addToBasket}>
                                 Выбрать
                             </button>
                     }

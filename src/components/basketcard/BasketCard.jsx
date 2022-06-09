@@ -1,15 +1,24 @@
 import css from './BasketCard.module.css'
 import React from 'react'
 import {useState} from 'react'
+import { useDispatch } from 'react-redux';
+import { DELETE_PIZZA_BASKET } from './../../redux/ActionTypes';
 
 export default function BasketCard({setBasket, basket, title, price, description, image, id, ...props }) {
     console.log(props);
 
 
-    const onDelete = (id) => {
-    const newArr = basket.filter((item) => item.id !== id)
-    setBasket([...newArr])
-  }
+//     const onDelete = (id) => {
+//     const newArr = basket.filter((item) => item.id !== id)
+//     setBasket([...newArr])
+//   }
+
+     
+  const dispatch = useDispatch();
+
+   const onDeleteFromBasket = () => {
+       dispatch({type: DELETE_PIZZA_BASKET, id: id})
+   }
 
     return (
         <div>
@@ -25,7 +34,7 @@ export default function BasketCard({setBasket, basket, title, price, description
                 <hr />
                 <div className={css.delete}>
                     <span style={{ marginLeft: "65px" }}>{price} </span>
-                    <button onClick={() => onDelete(id)} className={css.button} 
+                    <button onClick={onDeleteFromBasket} className={css.button} 
                     >Удалить</button>
                     
                 </div>

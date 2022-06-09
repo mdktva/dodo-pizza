@@ -2,12 +2,14 @@ import React from 'react'
 import css from './HeaderSecond.module.css'
 import Modal from '../../pages/modal/Modal'
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 export default function HeaderSecond(props) {
 
   const [isModal, setIsModal] = useState(false);
 
 
+  const basket = useSelector((state) => state.basket.data)
 
   return (
     <div className={css.body + " container"} >
@@ -25,11 +27,11 @@ export default function HeaderSecond(props) {
       </div>
       <div>
 
-        <button className={css.button} onClick={() => setIsModal(true)}>Корзина | {props.basket.length}</button>
+        <button className={css.button} onClick={() => setIsModal(true)}>Корзина | {basket.length}</button>
 
       </div>
 
-      <Modal setBasket={props.setBasket} basket={props.basket} setIsModal={setIsModal} isModal={isModal} />
+      <Modal basket={basket} setIsModal={setIsModal} isModal={isModal} />
 
     </div>
   )

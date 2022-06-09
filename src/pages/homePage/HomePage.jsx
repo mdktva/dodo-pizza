@@ -6,20 +6,13 @@ import { useEffect, useState } from "react";
 import InfoPizza from './../../components/infoPizza/InfoPizza';
 import Order from './../../components/order/Order';
 import Halal from './../../components/halal/Halal';
+import { useSelector} from 'react-redux';
 
-export default function HomePage(props) {
 
-    // const [pizza, setPizza] = useState([]);
+export default function HomePage() {
 
-    // useEffect(() => {
-    //     fetch('https://625eaad13b039517f1fa0794.mockapi.io/dodo')
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             console.log(data);
-    //             setPizza(data);
-    //         })
-    //         .catch((error) => console.log(error))
-    // }, []);
+ const pizzas = useSelector((state) => state.pizzas.data)
+ console.log(pizzas)
 
     return (
         <div >
@@ -36,12 +29,12 @@ export default function HomePage(props) {
                 <h1>Пицца</h1>
                 <div className={css.pizzaWrapper + " container"}>
 
-                    {
-                        props.pizzas.map((item, index) => <InfoPizza
-                            addToBasket={props.addToBasket}
+                    { pizzas.length
+                        ? pizzas.map((item, index) => <InfoPizza
                             key={item.id}
                             {...item}
                         />)
+                        : <h2 className={css.waterText}>Пока нет пиццы</h2>
                     }
                 </div>
             </div>
@@ -50,3 +43,16 @@ export default function HomePage(props) {
         </div>
     )
 }
+
+
+    // const [pizza, setPizza] = useState([]);
+
+    // useEffect(() => {
+    //     fetch('https://625eaad13b039517f1fa0794.mockapi.io/dodo')
+    //         .then((res) => res.json())
+    //         .then((data) => {
+    //             console.log(data);
+    //             setPizza(data);
+    //         })
+    //         .catch((error) => console.log(error))
+    // }, []);
